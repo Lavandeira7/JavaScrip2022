@@ -1,43 +1,45 @@
-//USANDO IF
-let entradas = 100
-let entradasUsuario = (prompt("Ingrese la cantidad de entradas"))
-let precioEntrada = 1500 * entradasUsuario
 
 
+/*let precio = 500
 
-   
-if(entradasUsuario != ""){
-        if (parseInt(entradasUsuario)   < entradas){
-            alert(`Usted debe abonar ${precioEntrada}`)
+function comprarEntradas (precio){
+    let entrada = parseInt(prompt("Ingrese cantidad de entradas")) 
+    let total = precio * entrada
 
-        }
+    if (entrada != ''){
+        alert (`Ha comprado ${entrada} entradas. El total es $ ${total}`)
     }
     else{
-        alert("Ingrese un valor")
-
+        alert("Ingrese una cantidad valida")
+    }
 }
 
-    
-//USANDO FOR 
-
- for (nroEntrada = 1;nroEntrada<100;nroEntrada++){
-        let usuario = prompt("Ingrese su usuario ")
-     alert(` ${usuario} Su numero de entrada es: ${nroEntrada}`)
-    
-     }  
+comprarEntradas(precio)*/
 
 
-//USANDO WHILE
-  
-let entradasCliente = (prompt("Ingrese la cantidad de entradas"))
+let valorCampo = 500
+let valorPalco = 600
+let valorVip =  1000
 
-  while (entradasCliente > 100){ 
-       alert(`No quedan entradas`)
-       let entradasCliente = (prompt("Ingrese la cantidad de entradas"))
-      
-      
-  }
- 
- 
+let entradas = parseInt(prompt("Ingrese cantidad de entradas"))
+let sector = prompt ("Ingrese Sector: Campo / Palco / Vip")
 
+function ubicacionEspectaculo(entradas,sector){
+    switch(sector){
+        case "Campo":
+             return (valorEntrada = entradas * valorCampo)
+             break;
+        case "Palco":
+            return  (valorEntrada = entradas * valorPalco)
+            break;
+        case "Vip":
+            return (valorEntrada = entradas * valorVip)
+            break;
+        default:
+            return 0 
+            break;
+    }
+}
 
+let respuesta = ubicacionEspectaculo (entradas,sector)
+alert(`Ustes compro ${entradas} entradas para el sector ${sector}. El total es: ${respuesta}`);
